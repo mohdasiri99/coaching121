@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج جلسة كوتشينج تعليمي - كوتش محمد عسيري</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --primary-color: #2c3e50; --secondary-color: #3498db; --accent-color: #e67e22; }
+        body { font-family: 'Tajawal', sans-serif; background-color: #f0f2f5; color: #333; line-height: 1.6; padding: 20px; }
+        .form-container { max-width: 900px; background: #fff; margin: auto; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); position: relative; }
+        
+        /* الهيدر */
+        .header { text-align: center; border-bottom: 3px solid var(--secondary-color); margin-bottom: 30px; padding-bottom: 20px; }
+        .header h1 { font-size: 24px; color: var(--primary-color); margin: 0; }
+        .header p { color: #666; font-size: 14px; }
+
+        /* الأقسام */
+        .section { margin-bottom: 30px; border: 1px solid #eee; padding: 20px; border-radius: 8px; background: #fdfdfd; }
+        .section-title { color: var(--secondary-color); font-weight: bold; border-right: 5px solid var(--secondary-color); padding-right: 10px; margin-bottom: 15px; display: flex; align-items: center; }
+        
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 15px; }
+        label { display: block; font-weight: 700; margin-bottom: 8px; font-size: 14px; }
+        input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-family: 'Tajawal', sans-serif; font-size: 14px; transition: 0.3s; }
+        input:focus, textarea:focus { border-color: var(--secondary-color); outline: none; box-shadow: 0 0 5px rgba(52, 152, 219, 0.2); }
+        
+        .guide-text { font-size: 13px; color: #7f8c8d; margin-bottom: 10px; display: block; font-style: italic; }
+
+        /* التوقيعات */
+        .signature-area { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+        .sig-box { border-top: 2px solid #ccc; text-align: center; padding-top: 10px; }
+        .sig-pad { border: 1px dashed #bbb; height: 80px; margin-bottom: 10px; border-radius: 4px; display: flex; align-items: center; justify-content: center; background: #fafafa; }
+
+        /* الأزرار */
+        .actions { text-align: center; margin-top: 40px; }
+        .btn { background: var(--secondary-color); color: white; padding: 12px 30px; border: none; border-radius: 25px; cursor: pointer; font-size: 16px; font-weight: bold; transition: 0.3s; }
+        .btn:hover { background: var(--primary-color); transform: translateY(-2px); }
+        .btn-print { background: #27ae60; margin-right: 10px; }
+
+        @media print { .actions { display: none; } .form-container { box-shadow: none; border: none; } }
+    </style>
+</head>
+<body>
+
+<div class="form-container" id="printable-area">
+    <div class="header">
+        <h1>نموذج جلسة كوتشينج تعليمي</h1>
+        <p>دليل الكوتش لإدارة جلسة فعالة لتحسين الأداء وتحقيق النمو المهني [cite: 2, 3]</p>
+    </div>
+
+    <div class="grid">
+        <div>
+            <label>اسم المستفيد[cite: 4]:</label>
+            <input type="text" placeholder="أدخل اسم الزميل...">
+        </div>
+        <div>
+            <label>الدور الوظيفي / المرحلة[cite: 5]:</label>
+            <select>
+                <option>معلم</option>
+                <option>إداري</option>
+                <option>طالب</option>
+            </select>
+        </div>
+        <div>
+            <label>اسم الكوتش[cite: 8]:</label>
+            <input type="text" value="محمد علي عبد الله عسيري" readonly style="background: #f9f9f9;">
+        </div>
+        <div>
+            <label>تاريخ الجلسة[cite: 6]:</label>
+            <input type="date" value="2026-02-25">
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">المرحلة الأولى: تحديد الهدف (Goal) [cite: 13]</div>
+        <span class="guide-text">توضيح ما يريد المستفيد تحقيقه (هدف ذكي SMART) [cite: 14, 15]</span>
+        <label>الهدف النهائي المتفق عليه[cite: 30]:</label>
+        <textarea rows="2" placeholder="ما الذي تأمل في تحقيقه بنهاية هذه الجلسة؟ [cite: 20]"></textarea>
+    </div>
+
+    <div class="section">
+        <div class="section-title">المرحلة الثانية: استكشاف الواقع (Reality) [cite: 31]</div>
+        <span class="guide-text">فهم الوضع الحالي، العقبات، والموارد المتاحة [cite: 32]</span>
+        <label>وصف الوضع الحالي والتحديات[cite: 35, 40]:</label>
+        <textarea rows="3"></textarea>
+    </div>
+
+    <div class="section">
+        <div class="section-title">المرحلة الثالثة: توليد الخيارات (Options) [cite: 49]</div>
+        <span class="guide-text">تشجيع التفكير الإبداعي وتوسيع دائرة الحلول الممكنة [cite: 50]</span>
+        <label>قائمة الخيارات والبدائل المقترحة[cite: 66]:</label>
+        <textarea rows="3" placeholder="ما هي الخيارات المتاحة أمامك؟ [cite: 56]"></textarea>
+    </div>
+
+    <div class="section">
+        <div class="section-title">المرحلة الرابعة: تحديد الإرادة وخطة العمل (Will) [cite: 68]</div>
+        <span class="guide-text">تحويل الأفكار إلى خطوات عملية محددة ومؤشرات نجاح [cite: 70, 71]</span>
+        <label>خطة العمل والخطوات التالية[cite: 88]:</label>
+        <textarea rows="3" placeholder="ما هي خطوتك الأولى تحديداً؟ ومتى ستقوم بها؟ [cite: 76]"></textarea>
+    </div>
+
+    <div class="signature-area">
+        <div class="sig-box">
+            <div class="sig-pad" contenteditable="true">انقر هنا لكتابة الاسم/التوقيع</div>
+            <label>توقيع المستفيد</label>
+        </div>
+        <div class="sig-box">
+            <div class="sig-pad">محمد علي عسيري</div>
+            <label>توقيع الكوتش</label>
+        </div>
+    </div>
+</div>
+
+<div class="actions">
+    <button class="btn btn-print" onclick="downloadPDF()">تحميل PDF احترافي</button>
+    <button class="btn" onclick="window.print()">طباعة فورية</button>
+</div>
+
+<script>
+    function downloadPDF() {
+        const element = document.getElementById('printable-area');
+        const opt = {
+            margin: [10, 10],
+            filename: 'جلسة_كوتشينج_تعليمي.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2, useCORS: true },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+        html2pdf().set(opt).from(element).save();
+    }
+</script>
+
+</body>
+</html>
