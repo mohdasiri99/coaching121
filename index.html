@@ -2,135 +2,124 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نموذج جلسة كوتشينج تعليمي - كوتش محمد عسيري</title>
+    <title>وثيقة جلسة كوتشينج تعليمي - نسخة الطباعة</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary-color: #2c3e50; --secondary-color: #3498db; --accent-color: #e67e22; }
-        body { font-family: 'Tajawal', sans-serif; background-color: #f0f2f5; color: #333; line-height: 1.6; padding: 20px; }
-        .form-container { max-width: 900px; background: #fff; margin: auto; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); position: relative; }
+        body { font-family: 'Cairo', sans-serif; background-color: #525659; padding: 0; margin: 0; }
         
-        /* الهيدر */
-        .header { text-align: center; border-bottom: 3px solid var(--secondary-color); margin-bottom: 30px; padding-bottom: 20px; }
-        .header h1 { font-size: 24px; color: var(--primary-color); margin: 0; }
-        .header p { color: #666; font-size: 14px; }
+        /* ضبط قياسات الصفحة لتطابق A4 */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            box-sizing: border-box;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
 
-        /* الأقسام */
-        .section { margin-bottom: 30px; border: 1px solid #eee; padding: 20px; border-radius: 8px; background: #fdfdfd; }
-        .section-title { color: var(--secondary-color); font-weight: bold; border-right: 5px solid var(--secondary-color); padding-right: 10px; margin-bottom: 15px; display: flex; align-items: center; }
+        .header { text-align: center; border-bottom: 2px solid #3498db; margin-bottom: 20px; padding-bottom: 10px; }
+        .header h1 { color: #2c3e50; font-size: 22px; margin: 0; }
+
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; background: #f8f9fa; padding: 15px; border-radius: 5px; }
         
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 15px; }
-        label { display: block; font-weight: 700; margin-bottom: 8px; font-size: 14px; }
-        input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-family: 'Tajawal', sans-serif; font-size: 14px; transition: 0.3s; }
-        input:focus, textarea:focus { border-color: var(--secondary-color); outline: none; box-shadow: 0 0 5px rgba(52, 152, 219, 0.2); }
+        .section { margin-bottom: 15px; border: 1px solid #dee2e6; border-radius: 5px; overflow: hidden; }
+        .section-header { background: #3498db; color: white; padding: 8px 15px; font-weight: bold; font-size: 16px; }
+        .section-content { padding: 15px; }
         
-        .guide-text { font-size: 13px; color: #7f8c8d; margin-bottom: 10px; display: block; font-style: italic; }
+        textarea { width: 100%; border: 1px solid #ced4da; border-radius: 4px; padding: 10px; font-family: 'Cairo'; font-size: 14px; resize: none; overflow: hidden; }
+        
+        .footer-sigs { margin-top: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding-top: 20px; }
+        .sig-line { border-top: 1px solid #000; text-align: center; margin-top: 50px; padding-top: 5px; font-weight: bold; }
 
-        /* التوقيعات */
-        .signature-area { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
-        .sig-box { border-top: 2px solid #ccc; text-align: center; padding-top: 10px; }
-        .sig-pad { border: 1px dashed #bbb; height: 80px; margin-bottom: 10px; border-radius: 4px; display: flex; align-items: center; justify-content: center; background: #fafafa; }
+        .btn-container { position: fixed; top: 20px; left: 20px; z-index: 1000; }
+        .download-btn { background: #27ae60; color: white; padding: 15px 25px; border: none; border-radius: 50px; cursor: pointer; font-size: 16px; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
 
-        /* الأزرار */
-        .actions { text-align: center; margin-top: 40px; }
-        .btn { background: var(--secondary-color); color: white; padding: 12px 30px; border: none; border-radius: 25px; cursor: pointer; font-size: 16px; font-weight: bold; transition: 0.3s; }
-        .btn:hover { background: var(--primary-color); transform: translateY(-2px); }
-        .btn-print { background: #27ae60; margin-right: 10px; }
-
-        @media print { .actions { display: none; } .form-container { box-shadow: none; border: none; } }
+        @media print {
+            body { background: none; }
+            .page { margin: 0; box-shadow: none; width: 100%; }
+            .btn-container { display: none; }
+        }
     </style>
 </head>
 <body>
 
-<div class="form-container" id="printable-area">
-    <div class="header">
-        <h1>نموذج جلسة كوتشينج تعليمي</h1>
-        <p>دليل الكوتش لإدارة جلسة فعالة لتحسين الأداء وتحقيق النمو المهني [cite: 2, 3]</p>
+    <div class="btn-container">
+        <button class="download-btn" onclick="generatePDF()">تحميل الوثيقة PDF ↓</button>
     </div>
 
-    <div class="grid">
-        <div>
-            <label>اسم المستفيد[cite: 4]:</label>
-            <input type="text" placeholder="أدخل اسم الزميل...">
+    <div id="coaching-document" class="page">
+        <div class="header">
+            <h1>نموذج جلسة كوتشينج تعليمي</h1>
+            <p>تمكين المستفيد من استكشاف إمكاناته وتحقيق أهدافه [cite: 3]</p>
         </div>
-        <div>
-            <label>الدور الوظيفي / المرحلة[cite: 5]:</label>
-            <select>
-                <option>معلم</option>
-                <option>إداري</option>
-                <option>طالب</option>
-            </select>
+
+        <div class="info-grid">
+            <div><strong>اسم المستفيد:</strong> <input type="text" style="width:70%"></div>
+            <div><strong>التاريخ:</strong> <input type="text" value="2026-02-25" readonly> [cite: 7]</div>
+            <div><strong>اسم الكوتش:</strong> محمد علي عسيري</div>
+            <div><strong>رقم الجلسة:</strong> <input type="text" style="width:50%"></div>
         </div>
-        <div>
-            <label>اسم الكوتش[cite: 8]:</label>
-            <input type="text" value="محمد علي عبد الله عسيري" readonly style="background: #f9f9f9;">
+
+        <div class="section">
+            <div class="section-header">المرحلة الأولى: تحديد الهدف (Goal) [cite: 13]</div>
+            <div class="section-content">
+                <p style="font-size: 12px; color: #666; margin-top: 0;">يجب أن يكون الهدف ذكياً (SMART)[cite: 15].</p>
+                <textarea rows="3" placeholder="دون هنا الهدف الذي تم الاتفاق عليه... [cite: 30]"></textarea>
+            </div>
         </div>
-        <div>
-            <label>تاريخ الجلسة[cite: 6]:</label>
-            <input type="date" value="2026-02-25">
+
+        <div class="section">
+            <div class="section-header">المرحلة الثانية: استكشاف الواقع (Reality) [cite: 31]</div>
+            <div class="section-content">
+                <textarea rows="4" placeholder="دون هنا الحقائق الرئيسية، التحديات والموارد المتاحة... [cite: 48]"></textarea>
+            </div>
         </div>
-    </div>
 
-    <div class="section">
-        <div class="section-title">المرحلة الأولى: تحديد الهدف (Goal) [cite: 13]</div>
-        <span class="guide-text">توضيح ما يريد المستفيد تحقيقه (هدف ذكي SMART) [cite: 14, 15]</span>
-        <label>الهدف النهائي المتفق عليه[cite: 30]:</label>
-        <textarea rows="2" placeholder="ما الذي تأمل في تحقيقه بنهاية هذه الجلسة؟ [cite: 20]"></textarea>
-    </div>
-
-    <div class="section">
-        <div class="section-title">المرحلة الثانية: استكشاف الواقع (Reality) [cite: 31]</div>
-        <span class="guide-text">فهم الوضع الحالي، العقبات، والموارد المتاحة [cite: 32]</span>
-        <label>وصف الوضع الحالي والتحديات[cite: 35, 40]:</label>
-        <textarea rows="3"></textarea>
-    </div>
-
-    <div class="section">
-        <div class="section-title">المرحلة الثالثة: توليد الخيارات (Options) [cite: 49]</div>
-        <span class="guide-text">تشجيع التفكير الإبداعي وتوسيع دائرة الحلول الممكنة [cite: 50]</span>
-        <label>قائمة الخيارات والبدائل المقترحة[cite: 66]:</label>
-        <textarea rows="3" placeholder="ما هي الخيارات المتاحة أمامك؟ [cite: 56]"></textarea>
-    </div>
-
-    <div class="section">
-        <div class="section-title">المرحلة الرابعة: تحديد الإرادة وخطة العمل (Will) [cite: 68]</div>
-        <span class="guide-text">تحويل الأفكار إلى خطوات عملية محددة ومؤشرات نجاح [cite: 70, 71]</span>
-        <label>خطة العمل والخطوات التالية[cite: 88]:</label>
-        <textarea rows="3" placeholder="ما هي خطوتك الأولى تحديداً؟ ومتى ستقوم بها؟ [cite: 76]"></textarea>
-    </div>
-
-    <div class="signature-area">
-        <div class="sig-box">
-            <div class="sig-pad" contenteditable="true">انقر هنا لكتابة الاسم/التوقيع</div>
-            <label>توقيع المستفيد</label>
+        <div class="section">
+            <div class="section-header">المرحلة الثالثة: توليد الخيارات (Options) [cite: 49]</div>
+            <div class="section-content">
+                <textarea rows="4" placeholder="قائمة الخيارات والبدائل المقترحة... [cite: 66]"></textarea>
+            </div>
         </div>
-        <div class="sig-box">
-            <div class="sig-pad">محمد علي عسيري</div>
-            <label>توقيع الكوتش</label>
+
+        <div class="section">
+            <div class="section-header">المرحلة الرابعة: خطة العمل (Will) [cite: 68]</div>
+            <div class="section-content">
+                <textarea rows="4" placeholder="دون هنا الخطوات التنفيذية، المواعيد، ومؤشرات النجاح... [cite: 89]"></textarea>
+            </div>
+        </div>
+
+        <div class="footer-sigs">
+            <div class="sig-line">توقيع المستفيد</div>
+            <div class="sig-line">توقيع الكوتش (محمد عسيري)</div>
         </div>
     </div>
-</div>
 
-<div class="actions">
-    <button class="btn btn-print" onclick="downloadPDF()">تحميل PDF احترافي</button>
-    <button class="btn" onclick="window.print()">طباعة فورية</button>
-</div>
-
-<script>
-    function downloadPDF() {
-        const element = document.getElementById('printable-area');
-        const opt = {
-            margin: [10, 10],
-            filename: 'جلسة_كوتشينج_تعليمي.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2, useCORS: true },
-            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-        };
-        html2pdf().set(opt).from(element).save();
-    }
-</script>
-
+    <script>
+        function generatePDF() {
+            const element = document.getElementById('coaching-document');
+            // إعدادات محسنة لضمان عدم قص المحتوى
+            const opt = {
+                margin: 0,
+                filename: 'Coaching_Session_2026.pdf',
+                image: { type: 'jpeg', quality: 1 },
+                html2canvas: { 
+                    scale: 2, 
+                    useCORS: true, 
+                    letterRendering: true,
+                    scrollY: 0
+                },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            
+            // تنفيذ التحميل
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
 </body>
 </html>
